@@ -1,16 +1,79 @@
-// variables
-$primary-color: #3498db;
-$text-color: #333;
+$primary: #f7931e;
+$text: #333;
+$bg: #f2f2f2;
 
-// nesting example
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  color: $text-color;
+  background: $bg;
+  color: $text;
+  padding-top: 70px;
+}
 
-  h1 {
-    color: $primary-color;
-    text-align: center;
-    margin-top: 50px;
-  }
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $primary;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.hero,
+.info,
+.cta {
+  padding: 20px;
+}
+
+.hero,
+.info {
+  display: flex;
+  gap: 20px;
+}
+
+.hero img,
+.info img {
+  width: 50%;
+}
+
+.hero p,
+.info .text {
+  width: 50%;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta-content {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.cta-content button {
+  background: $primary;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+
+.footer {
+  background: $primary;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 30px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
 }
