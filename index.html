@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GO BAR</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
     <header class="header">
     <a href="#" class="logo">GO BAR</a>
     <nav>
         <a href="#cta">Download</a>
+        <a href="#signup">Sing Up</a>
         <a href="#contact">Contact</a>
     </nav>
     </header>
@@ -44,6 +46,31 @@
     </div>
   </section>
   
+  <section id="signup" class="signup">
+    <h2>Create an account</h2>
+    <p>Join GO BAR community</p>
+
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" />
+      <span class="error" id="nameError"></span>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email" />
+      <span class="error" id="emailError"></span>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Password" />
+      <span class="error" id="passwordError"></span>
+
+      <label for="confirm">Confirm password</label>
+      <input type="password" id="confirm" name="confirm" placeholder="Confirm password" />
+      <span class="error" id="confirmError"></span>
+
+      <button type="submit">Sign up</button>
+    </form>
+  </section>
+
   <div>
     <h1>What is Lorem Ipsum?
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</h1>
