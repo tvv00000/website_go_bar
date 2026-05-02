@@ -15,7 +15,8 @@ form.addEventListener("submit", function (e) {
   passwordError.textContent = "";
   confirmError.textContent = "";
   nameError.textContent = "";
-
+  confirmError.style.color = "red";
+  
   const name = document.querySelector("#name").value.trim();
   const email = document.querySelector("#email").value.trim();
   const password = document.querySelector("#password").value;
@@ -63,6 +64,8 @@ form.addEventListener("submit", function (e) {
 
   if (!isValid) return;
 
+  confirmError.style.color = "green";
+  confirmError.textContent = "Account created";
   form.reset();
 });
 
