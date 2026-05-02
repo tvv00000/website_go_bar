@@ -5,6 +5,8 @@ const passwordError = document.querySelector("#passwordError");
 const confirmError = document.querySelector("#confirmError");
 const nameError = document.querySelector("#nameError");
 
+form.reset();
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -69,6 +71,8 @@ const fbForm = document.querySelector(".feedback form");
 const fbEmailError = document.querySelector("#fbEmailError");
 const fbMessageError = document.querySelector("#fbMessageError");
 
+fbForm.reset();
+
 fbForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -83,10 +87,10 @@ fbForm.addEventListener("submit", function (e) {
 
   // EMAIL
   if (!email) {
-    emailError.textContent = "Email is required";
+    fbEmailError.textContent = "Email is required";
     isValid = false;
   } else if (!email.includes("@")) {
-    emailError.textContent = "Invalid email address";
+    fbEmailError.textContent = "Invalid email address";
     isValid = false;
   }
 
