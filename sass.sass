@@ -4,6 +4,32 @@ $bg: #f2f2f2
 $bg_white: white
 $err_red: red
 
+/* MIXINS */
+@mixin flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin button($bg, $color)
+  background: $bg
+  color: $color
+  border: none
+  padding: 10px 20px
+  height: 40px
+  border-radius: 10px
+  cursor: pointer
+  transition: transform 0.1s ease, box-shadow 0.1s ease
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15)
+
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2)
+
+  &:active
+    transform: translateY(2px) scale(0.98)
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15)
+
+/* RESET */
 *
   margin: 0
   padding: 0
@@ -15,33 +41,32 @@ body
   color: $text
   padding-top: 70px
 
+/* HEADER */
 .header
-  display: flex
+  @include flex-center
+  justify-content: space-between
   position: fixed
   top: 0
   width: 100%
   background: $primary
   color: white
-  justify-content: space-between
-  align-items: center
   padding: 15px
 
   nav
-    display: flex
-    align-items: center
-    justify-content: space-between
+    @include flex-center
     gap: 30px
 
     a
       display: flex
-      color: white
-      text-decoration: none
       align-items: center
       gap: 8px
+      color: white
+      text-decoration: none
 
 .logo img
   height: 40px
 
+/* SECTIONS */
 .hero,
 .info,
 .cta
@@ -63,8 +88,8 @@ section
   p,
   .text
     width: 50%
-    margin: 0
 
+/* CTA */
 .cta
   display: flex
   flex-direction: column
@@ -72,31 +97,14 @@ section
   gap: 30px
 
   &-content
-    display: flex
-    justify-content: center
-    align-items: center
+    @include flex-center
     gap: 5%
     margin-top: 15px
 
     button
-      background: $primary
-      color: $bg_white
-      border: none
-      padding: 10px 20px
-      height: 40px
-      border-radius: 10px
-      cursor: pointer
-      transition: transform 0.1s ease, box-shadow 0.1s ease
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15)
+      @include button($primary, $bg_white)
 
-      &:hover
-        transform: translateY(-2px)
-        box-shadow: 0 6px 14px rgba(0,0,0,0.2)
-
-      &:active
-        transform: translateY(2px) scale(0.98)
-        box-shadow: 0 2px 6px rgba(0,0,0,0.15)
-
+/* FOOTER */
 .footer
   background: $primary
   color: $bg_white
@@ -107,6 +115,7 @@ section
     display: flex
     justify-content: space-between
 
+/* FORMS */
 .signup,
 .feedback
   padding: 40px 20px
@@ -137,17 +146,12 @@ section
       border-radius: 5px
 
     button
-      margin-top: 10px
-      background: $primary
-      color: $bg_white
-      border: none
-      padding: 10px
-      cursor: pointer
-      border-radius: 5px
+      @include button($primary, $bg_white)
 
       &:hover
         opacity: 0.9
 
+/* ERROR */
 .error
   color: $err_red
   font-size: 12px
@@ -155,6 +159,7 @@ section
   margin-bottom: 5px
   display: block
 
+/* BURGER */
 .burger
   display: none
   font-size: 28px
@@ -163,6 +168,7 @@ section
   color: white
   cursor: pointer
 
+/* MOBILE */
 @media (max-width: 768px)
 
   .burger
