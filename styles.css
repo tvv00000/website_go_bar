@@ -231,8 +231,17 @@ section {
   cursor: pointer;
 }
 
+.burger {
+  display: none;
+}
+
 /* mobile styles */
 @media (max-width: 768px) {
+  /* show burger */
+  .burger {
+    display: block;
+  }
+  /* hide normal desktop nav layout */
   nav {
     position: absolute;
     top: 70px;
@@ -246,11 +255,24 @@ section {
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
+  /* when opened */
   nav.active {
     max-height: 300px;
     padding: 20px 0;
   }
-  .burger {
-    display: block;
+  /* make layout stack */
+  .hero,
+  .info {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero img,
+  .info img {
+    width: 100%;
+    max-width: 320px;
+  }
+  .hero p,
+  .info .text {
+    width: 100%;
   }
 }/*# sourceMappingURL=styles.css.map */
