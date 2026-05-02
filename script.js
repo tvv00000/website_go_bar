@@ -102,8 +102,8 @@ fbForm.addEventListener("submit", function (e) {
 
   if (!isValid) return;
 
-  fbEmailError.style.color = "green";
-  fbEmailError.textContent = "Feedback sent!";
+  fbMessageError.style.color = "green";
+  fbMessageError.textContent = "Feedback sent!";
 
   fbForm.reset();
 });
