@@ -72,7 +72,10 @@ section {
 }
 
 .cta {
+  display: flex;
   text-align: center;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .cta-content {
