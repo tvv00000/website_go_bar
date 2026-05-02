@@ -63,3 +63,43 @@ form.addEventListener("submit", function (e) {
 
   form.reset();
 });
+
+const fbForm = document.querySelector(".feedback form");
+
+const fbEmailError = document.querySelector("#fbEmailError");
+const fbMessageError = document.querySelector("#fbMessageError");
+
+fbForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // clear
+  fbEmailError.textContent = "";
+  fbMessageError.textContent = "";
+
+  const email = document.querySelector("#fbEmail").value.trim();
+  const message = document.querySelector("#fbMessage").value.trim();
+
+  let isValid = true;
+
+  // EMAIL
+  if (!email) {
+    emailError.textContent = "Email is required";
+    isValid = false;
+  } else if (!email.includes("@")) {
+    emailError.textContent = "Invalid email address";
+    isValid = false;
+  }
+
+  // MESSAGE
+  if (!message) {
+    fbMessageError.textContent = "Message cannot be empty";
+    isValid = false;
+  }
+
+  if (!isValid) return;
+
+  fbEmailError.style.color = "green";
+  fbEmailError.textContent = "Feedback sent!";
+
+  fbForm.reset();
+});
