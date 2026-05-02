@@ -3,6 +3,7 @@ $text: #333
 $bg: #f2f2f2
 $bg_white: white
 $err_red: red
+$shadow: rgba(0,0,0,0.15)
 
 /* MIXINS */
 @mixin flex-center
@@ -19,15 +20,15 @@ $err_red: red
   border-radius: 10px
   cursor: pointer
   transition: transform 0.1s ease, box-shadow 0.1s ease
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15)
+  box-shadow: 0 4px 10px $shadow
 
   &:hover
     transform: translateY(-2px)
-    box-shadow: 0 6px 14px rgba(0,0,0,0.2)
+    box-shadow: 0 6px 14px $shadow
 
   &:active
     transform: translateY(2px) scale(0.98)
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15)
+    box-shadow: 0 2px 6px $shadow
 
 /* RESET */
 *
@@ -49,7 +50,7 @@ body
   top: 0
   width: 100%
   background: $primary
-  color: white
+  color: $bg_white
   padding: 15px
 
   nav
@@ -60,7 +61,7 @@ body
       display: flex
       align-items: center
       gap: 8px
-      color: white
+      color: $bg_white
       text-decoration: none
 
 .logo img
@@ -133,7 +134,7 @@ section
     background: $bg_white
     padding: 20px
     border-radius: 10px
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1)
+    box-shadow: 0 2px 10px $shadow
 
     label
       text-align: left
@@ -165,7 +166,7 @@ section
   font-size: 28px
   background: none
   border: none
-  color: white
+  color: $bg_white
   cursor: pointer
 
 /* MOBILE */
