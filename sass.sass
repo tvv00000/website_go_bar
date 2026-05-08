@@ -17,6 +17,7 @@ $shadow: rgba(0,0,0,0.15)
   border: none
   padding: 10px 20px
   height: 40px
+  font-size: 1rem
   border-radius: 10px
   cursor: pointer
   transition: transform 0.1s ease, box-shadow 0.1s ease
@@ -41,17 +42,20 @@ body
   background: $bg
   color: $text
   padding-top: 70px
+  font-size: 20px
+  line-height: 1.7
 
 /* HEADER */
 .header
   @include flex-center
+  height: 70px
   justify-content: space-between
   position: fixed
   top: 0
   width: 100%
   background: $primary
   color: $bg_white
-  padding: 15px
+  padding: 0 15px
 
   nav
     @include flex-center
@@ -138,7 +142,7 @@ section
 
     label
       text-align: left
-      font-size: 14px
+      font-size: 1rem
 
     input,
     textarea
@@ -155,7 +159,7 @@ section
 /* ERROR */
 .error
   color: $err_red
-  font-size: 12px
+  font-size: 0.9rem
   margin-top: -5px
   margin-bottom: 5px
   display: block
